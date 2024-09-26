@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XSS Vulnerability</title>
+</head>
+<body>
+    <h1>Submit Input (XSS Vulnerability)</h1>
+    <form action="/submit" method="POST">
+        <input type="text" name="input" placeholder="Enter text here" />
+        <button type="submit">Submit</button>
+    </form>
+    <div>
+        <p>Submitted input: <span th:utext="${userInput}"></span></p>
+    </div>
+</body>
+</html>

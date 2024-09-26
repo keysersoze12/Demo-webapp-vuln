@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Login</title>
+</head>
+<body>
+    <h1>Login (SQL Injection Vulnerability)</h1>
+    <form action="/test-login" method="POST">
+        <label>Username: </label><input type="text" name="username">
+        <label>Password: </label><input type="password" name="password">
+        <button type="submit">Login</button>
+    </form>
+    <p th:text="${message}"></p>
+</body>
+</html>

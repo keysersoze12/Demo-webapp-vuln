@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>SSRF Vulnerability</title>
+</head>
+<body>
+    <h1>SSRF Vulnerability</h1>
+    
+    <!-- Form to input the URL -->
+    <form action="/ssrf" method="get">
+        <label for="url">Enter URL:</label>
+        <input type="text" id="url" name="url" placeholder="http://example.com">
+        <button type="submit">Fetch</button>
+    </form>
+
+    <!-- Display fetched content or error message -->
+    <p th:text="${message}"></p>
+    <p th:utext="${response}"></p> <!-- th:utext allows unescaped HTML content -->
+
+</body>
+</html>

